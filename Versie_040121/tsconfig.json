@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "jsx": "react",
+    "lib": ["esnext", "dom"],
+    "target": "es6",
+    "module": "none",
+    "noEmit": true,
+    "checkJs": true,
+    "allowJs": true,
+    "types": [
+      "@sapui5/ts-types"
+    ]
+  }
+}
