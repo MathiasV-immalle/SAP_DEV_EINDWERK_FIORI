@@ -1,0 +1,83 @@
+<mvc:View xmlns:semantic2="sap.m.semantic"
+	controllerName="ap.be.Eindwerk_MathiasV.controller.Detail"
+	xmlns="sap.m"
+	xmlns:semantic="sap.f.semantic"
+	xmlns:mvc="sap.ui.core.mvc">
+
+	<semantic:SemanticPage
+		id="detailPage"
+		busy="{detailView>/busy}"
+		busyIndicatorDelay="{detailView>/delay}"
+        showFooter="true">
+		<semantic:titleHeading>
+            <Title
+				text="Product Details"
+				level="H4"/>
+		</semantic:titleHeading>
+		<semantic:headerContent>
+            <ObjectIdentifier 
+                text="{ProductId}" id="prod_id"
+            />
+            <ObjectHeader
+                icon="sap-icon://product"
+                title="{Name}"
+                number="{
+                    parts:[{path:'Price'},{path:'CurrencyCode'}],
+                    type: 'sap.ui.model.type.Currency',
+                    formatOptions: {showMeasure: false}
+                }"
+                numberUnit="{Currency}"
+                class="sapUiResponsivePadding--header" >
+                <statuses>
+                    <ObjectStatus
+                        text="{= ${Status} === 1 ? 'Validated' : ${Status} === 2 ? 'Rejected' : ${Status} === 3 ? 'To be validated' :  ${Status} === 4 ? 'Obsolete' : 'Unknown' }"
+                        state="{= ${Status} === 1 ? 'Success' : ${Status} === 2 || ${Status} === 4 ? 'Error' : ${Status} === 3 ? 'Warning' : 'Error'}" />
+                </statuses>
+            </ObjectHeader>
+		</semantic:headerContent>
+		<semantic:content>
+			<semantic2:DetailPage 
+            id="page"
+            showFooter="false">
+            </semantic2:DetailPage>
+		</semantic:content>
+		<!--Semantic ShareMenu Buttons-->
+
+        <semantic:footerCustomActions>
+			<Button id="edit" text="Edit" press="handleEditPress"/>
+		</semantic:footerCustomActions>
+
+        <semantic:positiveAction>
+            <semantic:PositiveAction id="save" visible="false" text="Save" press="handleSavePress"/>
+        </semantic:positiveAction>
+
+        <semantic:negativeAction>
+            <semantic:NegativeAction id="cancel" visible="false" text="Cancel" press="handleCancelPress"/>
+        </semantic:negativeAction>
+
+        <semantic:footerCustomActions>
+			<Button id="delete" text="Delete" press="handleDeletePress"/>
+		</semantic:footerCustomActions>
+
+		<semantic:closeAction>
+			<semantic:CloseAction
+					id="closeColumn"
+					press=".onCloseDetailPress"/>
+		</semantic:closeAction>
+
+		<semantic:fullScreenAction>
+			<semantic:FullScreenAction
+					id="enterFullScreen"
+					visible="{= !${device>/system/phone} &amp;&amp; !${appView>/actionButtonsInfo/midColumn/fullScreen}}"
+					press=".toggleFullScreen"/>
+		</semantic:fullScreenAction>
+		<semantic:exitFullScreenAction>
+			<semantic:ExitFullScreenAction
+					id="exitFullScreen"
+					visible="{= !${device>/system/phone} &amp;&amp; ${appView>/actionButtonsInfo/midColumn/fullScreen}}"
+					press=".toggleFullScreen"/>
+		</semantic:exitFullScreenAction>
+
+	</semantic:SemanticPage>
+
+</mvc:View>

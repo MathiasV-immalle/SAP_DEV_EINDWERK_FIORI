@@ -1,0 +1,88 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core">
+	<VBox class="sapUiSmallMargin">
+		<f:SimpleForm id="SimpleFormChange480_12120"
+			editable="true"
+			layout="ResponsiveGridLayout"
+			title="Product Details"
+			labelSpanXL="4"
+			labelSpanL="4"
+			labelSpanM="12"
+			labelSpanS="12"
+			adjustLabelSpan="false"
+			emptySpanXL="0"
+			emptySpanL="0"
+			emptySpanM="0"
+			emptySpanS="0"
+			columnsXL="2"
+			columnsL="2"
+			columnsM="1"
+			singleContainerFullSize="false" >
+			<f:content>
+				<Label text="Product Category" />
+				<Input value="{Category}" id="prod_category"/>
+				<Label text="Supplier ID" />
+				<Input value="{SupplierId}" id="prod_supplierid"/>
+				<Label text="Product Name" />
+				<Input value="{Name}" id="prod_name"/>
+				<Label text="Product Description" />
+				<Input value="{Description}" id="prod_description"/>
+				<Label text="Price" />
+				<Input value="{Price}" id="prod_price"/>
+				<Label text="Unit Of Measure" />
+				<Select id="prod_uom" selectedKey="{WeightUnit}">
+					<items>
+						<core:Item text="Per Piece" key="PC"/>
+						<core:Item text="Per Dozen" key="PD"/>
+					</items>
+				</Select>
+				<Label text="Weight" />
+				<Input value="{Weight}" id="prod_weight"/>                
+				<Select id="prod_weightunit" selectedKey="{WeightUnit}">
+					<items>
+						<core:Item text="KG" key="KG"/>
+						<core:Item text="G" key="G"/>
+					</items>
+				</Select>
+			</f:content>
+		</f:SimpleForm>
+		<f:SimpleForm id="SimpleFormChange480_12120-2"
+			editable="true"
+			layout="ResponsiveGridLayout"
+			title="Dimensions"
+			labelSpanXL="4"
+			labelSpanL="4"
+			labelSpanM="12"
+			labelSpanS="12"
+			adjustLabelSpan="false"
+			emptySpanXL="0"
+			emptySpanL="0"
+			emptySpanM="0"
+			emptySpanS="0"
+			columnsXL="2"
+			columnsL="2"
+			columnsM="1"
+			singleContainerFullSize="false">
+			<f:content>
+				<Label text="Width" />
+				<Input value="{Width}" id="prod_width"/>
+				<Label text="Depth" />
+				<Input value="{Depth}" id="prod_depth"/>
+				<Label text="Height" />
+				<Input value="{Height}" id="prod_height"/>
+				<Label text="Unit" />
+				<Select id="prod_dimunit" selectedKey="{DimUnit}">
+					<items>
+						<core:Item text="CM" key="CM"/>
+						<core:Item text="DM" key="DM"/>
+						<core:Item text="M" key="M"/>
+						<core:Item text="INCH" key="IN"/>
+					</items>
+				</Select>
+			</f:content>
+		</f:SimpleForm>
+	</VBox>
+</core:FragmentDefinition>
