@@ -46,7 +46,14 @@ sap.ui.define([
         },
         
         handleDeletePress : function () {
-            // this.getView().getModel().callFunction("/deleteProduct", { "Iv_product_id" : "ST24-0001" }, {
+            console.log(this.getView().getModel());
+            this.getView().getModel().callFunction("/deleteProduct", {    
+                method: "POST",
+                urlParameters: {
+                    Iv_product_id: this.getView().getModel().getProperty("ProductId")
+                }
+            });
+            // this.getView().getModel().callFunction("/deleteProduct", {
             //     success: function (oResult) {
             //         this.getRouter().navTo("object", {
             //             objectId: oResult.deleteProduct.ProductId

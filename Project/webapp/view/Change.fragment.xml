@@ -23,20 +23,58 @@
 			singleContainerFullSize="false" >
 			<f:content>
 				<Label text="Product Category" />
-				<Input value="{Category}" id="prod_category"/>
+                <Select id="prod_category" selectedKey="{Category}">
+					<items>
+						<core:Item text="Laptops" key="Laptops"/>
+                        <core:Item text="Tablets" key="Tablets"/>
+                        <core:Item text="Accessories" key="Accessories"/>
+                        <core:Item text="Flat Screen Monitors" key="Flat Screen Monitors" />
+                        <core:Item text="Printers" key="Printers" />
+                        <core:Item text="Multifunction Printers" key="Multifunction Printers" />
+                        <core:Item text="Mice" key="Mice" />
+                        <core:Item text="Keyboards" key="Keyboards" />
+                        <core:Item text="Mousepads" key="Mousepads" />
+                        <core:Item text="Computer System Accessories" key="Computer System Accessories" />
+                        <core:Item text="Graphic Cards" key="Graphic Cards"/>
+                        <core:Item text="Scanners" key="Scanners"/>
+                        <core:Item text="Speakers" key="Speakers"/>
+                        <core:Item text="Software" key="Software"/>
+                        <core:Item text="Telecommunications" key="Telecommunications"/>
+                        <core:Item text="PCs" key="PCs"/>
+                        <core:Item text="Smartphones and Tablets" key="Smartphones and Tablets"/>
+                        <core:Item text="Flat Screens" key="Flat Screens"/>
+                        <core:Item text="Servers" key="Servers"/>
+                        <core:Item text="Desktop Computer" key="Desktop Computer"/>
+                        <core:Item text="Flat Screen TVs" key="Flat Screen TVs"/>
+					</items>
+				</Select>
 				<Label text="Supplier ID" />
-				<Input value="{SupplierId}" id="prod_supplierid"/>
+                <Select id="prod_supplierid" selectedKey="{SupplierId}">
+					<items>
+						<core:Item text="Alpha Printers" key="1"/>
+                        <core:Item text="Brainsoft" key="2"/>
+                        <core:Item text="Fasttech" key="3"/>
+                        <core:Item text="Oxynum" key="4"/>
+                        <core:Item text="Printer for All" key="5"/>
+                        <core:Item text="Red Point Stores" key="6"/>
+                        <core:Item text="Smartcards" key="7"/>
+                        <core:Item text="Speaker Experts" key="8"/>
+                        <core:Item text="Technocom" key="9"/>
+                        <core:Item text="Titanium" key="10"/>
+                        <core:Item text="Ultrasonic United" key="11"/>
+                        <core:Item text="Very Best Screens" key="12"/>
+					</items>
+				</Select>
 				<Label text="Product Name" />
 				<Input value="{Name}" id="prod_name"/>
 				<Label text="Product Description" />
 				<Input value="{Description}" id="prod_description"/>
 				<Label text="Price" />
-				<Input value="{Price}" id="prod_price"/>
+				<Input value="{Price}" id="prod_price"/><Text text="EUR"></Text>
 				<Label text="Unit Of Measure" />
 				<Select id="prod_uom" selectedKey="{WeightUnit}">
 					<items>
-						<core:Item text="Per Piece" key="PC"/>
-						<core:Item text="Per Dozen" key="PD"/>
+						<core:Item text="Pieces" key="PC"/>
 					</items>
 				</Select>
 				<Label text="Weight" />
@@ -77,9 +115,6 @@
 				<Select id="prod_dimunit" selectedKey="{DimUnit}">
 					<items>
 						<core:Item text="CM" key="CM"/>
-						<core:Item text="DM" key="DM"/>
-						<core:Item text="M" key="M"/>
-						<core:Item text="INCH" key="IN"/>
 					</items>
 				</Select>
 			</f:content>
