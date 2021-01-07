@@ -25,6 +25,7 @@
 				<Label text="Product Category" />
                 <Select id="prod_category" selectedKey="{Category}">
 					<items>
+                        <core:Item text="" key=""/>
 						<core:Item text="Laptops" key="Laptops"/>
                         <core:Item text="Tablets" key="Tablets"/>
                         <core:Item text="Accessories" key="Accessories"/>
@@ -49,9 +50,10 @@
 					</items>
 				</Select>
 				<Label text="Supplier ID" />
-                <Select id="prod_supplierid" selectedKey="{SupplierId}">
+                <Select id="prod_supplierid" selectedKey="{path: 'SupplierId', type: 'sap.ui.model.type.Integer'}">
 					<items>
-						<core:Item text="Alpha Printers" key="1"/>
+                        <core:Item text="" key="0"/>
+						<core:Item text="Alpha Printers" key="1"  />
                         <core:Item text="Brainsoft" key="2"/>
                         <core:Item text="Fasttech" key="3"/>
                         <core:Item text="Oxynum" key="4"/>
@@ -72,8 +74,9 @@
 				<Label text="Price" />
 				<Input value="{Price}" id="prod_price"/><Text text="EUR"></Text>
 				<Label text="Unit Of Measure" />
-				<Select id="prod_uom" selectedKey="{WeightUnit}">
+				<Select id="prod_uom" selectedKey="{Uom}">
 					<items>
+                        <core:Item text="" key=""/>
 						<core:Item text="Pieces" key="PC"/>
 					</items>
 				</Select>
@@ -114,6 +117,7 @@
 				<Label text="Unit" />
 				<Select id="prod_dimunit" selectedKey="{DimUnit}">
 					<items>
+						<core:Item text="" key=""/>
 						<core:Item text="CM" key="CM"/>
 					</items>
 				</Select>

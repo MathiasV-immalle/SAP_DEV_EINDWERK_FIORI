@@ -53,13 +53,6 @@ sap.ui.define([
                     Iv_product_id: this.getView().getModel().getProperty("ProductId")
                 }
             });
-            // this.getView().getModel().callFunction("/deleteProduct", {
-            //     success: function (oResult) {
-            //         this.getRouter().navTo("object", {
-            //             objectId: oResult.deleteProduct.ProductId
-            //         });
-            //     }.bind(this)
-            // });
 		},
 
 		handleCancelPress : function () {

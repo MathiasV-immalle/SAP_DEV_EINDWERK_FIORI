@@ -25,7 +25,7 @@ sap.ui.define([
 		 */
 		onInit : function () {
 			// Control state model
-			var oList = this.byId("list"),
+            var oList = this.byId("list"),
 				oViewModel = this._createViewModel(),
 				// Put down master list's original value for busy indicator delay,
 				// so it can be restored later on. Busy handling on the master list is
@@ -73,7 +73,7 @@ sap.ui.define([
 			});
 
 			this.getRouter().getRoute("master").attachPatternMatched(this._onMasterMatched, this);
-			this.getRouter().attachBypassed(this.onBypassed, this);
+            this.getRouter().attachBypassed(this.onBypassed, this);
 		},
 
 		/* =========================================================== */
@@ -88,12 +88,6 @@ sap.ui.define([
                     });
                 }.bind(this)
             });
-            // , {​​​​​​​				
-            //     				
-            //     // error: function (oError) {​​​​​​​					
-            //     //     this.getOwnerComponent().showServiceError(oError);				
-            //     // }​​​​​​​.bind(this)			
-            // }​​​​​​​);
         },
 
 		/**
