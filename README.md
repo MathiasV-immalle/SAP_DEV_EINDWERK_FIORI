@@ -6,9 +6,9 @@ Eindwerk voor het vak SAP Development, 3e jaar TI AP Hogeschool
 - **Master-detail application**
 - Values: ProductSet
 - Functions:
-  - Update existing
-  - Create new
-  - Delete existing
+  - Update
+  - Create
+  - Delete
 
 ## ProductSet
 
