@@ -97,7 +97,7 @@
           "target": "master"
         },
         {
-          "pattern": "ProductSet/{objectId}",
+          "pattern": "ProductSet/{objectId}/:new:",
           "name": "object",
           "target": [
             "master",

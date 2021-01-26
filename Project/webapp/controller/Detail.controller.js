@@ -40,17 +40,16 @@ sap.ui.define([
             // Set the initial form to be the display one
             this._showFormFragment("Display");
         },
-        
+
         handleEditPress : function () {
 			this._toggleButtonsAndView(true);
         },
         
         handleDeletePress : function () {
-            console.log(this.getView().getModel());
             this.getView().getModel().callFunction("/deleteProduct", {    
                 method: "POST",
                 urlParameters: {
-                    Iv_product_id: this.getView().getModel().getProperty("ProductId")
+                    Iv_product_id: this.getView().getBindingContext().getProperty("ProductId")
                 }
             });
 		},
@@ -58,8 +57,8 @@ sap.ui.define([
 		handleCancelPress : function () {
             this.getModel().resetChanges();
 			this._toggleButtonsAndView(false);
-		},
-
+        },
+        
 		handleSavePress : function () {
             var oResourceBundle = this.getView().getModel("i18n").getResourceBundle();
             var bCompact = !!this.getView().$().closest(".sapUiSizeCompact").length;
@@ -174,14 +173,18 @@ sap.ui.define([
 		 * @private
 		 */
 		_onObjectMatched : function (oEvent) {
-			var sObjectId =  oEvent.getParameter("arguments").objectId;
+            var sObjectId =  oEvent.getParameter("arguments").objectId;
+            var sNew = oEvent.getParameter("arguments").new;
 			this.getModel("appView").setProperty("/layout", "TwoColumnsMidExpanded");
 			this.getModel().metadataLoaded().then( function() {
 				var sObjectPath = this.getModel().createKey("ProductSet", {
 					ProductId :  sObjectId
 				});
 				this._bindView("/" + sObjectPath);
-			}.bind(this));
+            }.bind(this));
+            if(sNew == "true"){
+                this.handleEditPress();
+            }
 		},
 
 		/**

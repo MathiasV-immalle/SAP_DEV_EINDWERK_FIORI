@@ -72,7 +72,8 @@
 				<Label text="Product Description" />
 				<Input value="{Description}" id="prod_description"/>
 				<Label text="Price" />
-				<Input value="{Price}" id="prod_price"/><Text text="EUR"></Text>
+				<Input value="{Price}" id="prod_price" /> <Input enabled="false" value="{Currency}"/> 
+                <!-- Currency is default EUR in back-end. To change this, ask admin to remove default 'EUR' in back-end and change 'enabled"false"' to 'enabled"true"' -->
 				<Label text="Unit Of Measure" />
 				<Select id="prod_uom" selectedKey="{Uom}">
 					<items>
@@ -81,13 +82,13 @@
 					</items>
 				</Select>
 				<Label text="Weight" />
-				<Input value="{Weight}" id="prod_weight"/>                
-				<Select id="prod_weightunit" selectedKey="{WeightUnit}">
+				<Input value="{Weight}" id="prod_weight"/> 
+                <SegmentedButton id="prod_weightunit" selectedKey="{WeightUnit}">
 					<items>
-						<core:Item text="KG" key="KG"/>
-						<core:Item text="G" key="G"/>
+						<SegmentedButtonItem text="KG" key="KG" />
+						<SegmentedButtonItem text="G" key="G" />
 					</items>
-				</Select>
+				</SegmentedButton>
 			</f:content>
 		</f:SimpleForm>
 		<f:SimpleForm id="SimpleFormChange480_12120-2"

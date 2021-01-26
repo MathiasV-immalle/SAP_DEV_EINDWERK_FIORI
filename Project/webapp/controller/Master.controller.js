@@ -84,7 +84,8 @@ sap.ui.define([
             this.getView().getModel().callFunction("/createNewProduct", {
                 success: function (oResult) {
                     this.getRouter().navTo("object", {
-                        objectId: oResult.createNewProduct.ProductId
+                        objectId: oResult.createNewProduct.ProductId,
+                        new: true
                     });
                 }.bind(this)
             });
